@@ -14,7 +14,7 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Build a simple JSON list
         run: echo -n {0..9} | jq --raw-input --slurp 'split(" ")' | tee list.json
@@ -39,7 +39,7 @@ jobs:
       NUMBER: ${{ matrix.number }}
     steps:
       - name: Clone repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
       - name: Print our number
         run: |
